@@ -82,6 +82,13 @@ jobs:
     - name: Snyk Monitor to default Org
       run: snyk monitor 
       continue-on-error: true
+
+    #Snyk Monitor (Target in existing or new Org)
+    - name: Snyk Monitor to existing or new Org
+      run: snyk monitor --remote-repo-url=MonitoredGHPipeline
+      continue-on-error: true
+
+      
     
     #Collect all the generated html files and upload to a GitHub Artifact
     - name: Use the Upload Artifact GitHub Action
