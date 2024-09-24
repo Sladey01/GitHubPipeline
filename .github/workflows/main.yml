@@ -78,9 +78,9 @@ jobs:
        snyk-to-html -i results-iac.json -o results-iac.html 
        snyk-to-html -i results-container.json -o results-container.html
 
-    #Snyk Monitor (Target in Preferred Org)
+    #Snyk Monitor 
     - name: Snyk Monitor to default Org
-      run: snyk monitor 
+      run: snyk monitor --remote-repo-url=MonitorChallenge --project-name=DSprojectXYZ
       continue-on-error: true
     
     #Collect all the generated html files and upload to a GitHub Artifact
