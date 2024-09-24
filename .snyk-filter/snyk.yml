@@ -1,5 +1,5 @@
 version: 2
 customFilters:
-  filter: ".vulnerabilities |= map(if .isUpgradable == true and .severity != \"low\" then . else empty end)"
-  pass: "[.vulnerabilities[] | select(.severity != \"low\" and .isUpgradable == true)] | length"
-  msg: "Medium or above severity & upgradeable vulns found. Please review upgrade steps"
+  filter: "[.infrastructureAsCodeIssues[] | if .severity == \"high\" or .severity == \"critical\" then . else empty end]"
+  pass: "[.infrastructureAsCodeIssues[] | select(.severity == \"high\" or .severity == \"critical\")] | length"
+  msg: "High or above severity infrastructure as code issues found. Please review resolve steps"
