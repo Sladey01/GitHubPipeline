@@ -65,7 +65,7 @@ jobs:
     # Run Snyk Filter Test (see /.snyk-filter.snyk.yml for config)
     # Snyk-filer cannot create an output file so we pipe directly to snyk-to-html
     - name: Snyk filter test
-      run: snyk-filter --json -i results-opensource.json | snyk-to-html -o results-snykfilter.html
+      run: snyk-filter --json -i results-iac.json | snyk-to-html -o results-snykfilter.html
       continue-on-error: true
       
     # Use Snyk to Html on json files (use -s for summary and -a for actionable issues)
