@@ -80,7 +80,7 @@ jobs:
 
     #Snyk Monitor (Target in Preferred Org)
     - name: Snyk Monitor to default Org
-      run: snyk monitor 
+      run: snyk monitor --remote-repo-url=Alpha1 --project-name=Alphatest1
       continue-on-error: true
     
     #Collect all the generated html files and upload to a GitHub Artifact
