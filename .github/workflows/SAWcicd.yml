@@ -1,6 +1,6 @@
 # Remote App in non-blocking mode.setup
 
-name: CI
+name: Snyk API & Web CICD Scan
 
 on:
   push:
